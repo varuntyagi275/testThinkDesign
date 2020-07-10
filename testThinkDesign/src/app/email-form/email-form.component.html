@@ -1,0 +1,65 @@
+<div class="col-lg-6">
+<div class="card">
+   
+    <div class="card-header bg-danger">
+     <h2> Send New Email</h2>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="emailForm" (ngSubmit)="submit()">
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" id="receivermail" class="form-control " formControlName="receivermail"
+                    placeholder="ex- test@testmail.com" required>
+
+                <div *ngIf="receivermail.invalid && (receivermail.dirty || receivermail.touched)"
+                    class="alert alert-danger error-border">
+
+                    <div *ngIf="receivermail.errors.required">
+                       <small> Email is required.</small>
+                    </div>
+                    <div *ngIf="receivermail.errors.email">
+                       <small> Email is not valid.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">subject</label>
+                <input type="text" id="subject" class="form-control" formControlName="subject" required
+                    placeholder="subject">
+                <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="alert alert-danger">
+
+                    <div *ngIf="subject.errors.required">
+                      <small>  subject is required.</small>
+                    </div>
+                    <!-- <div *ngIf="email.errors.email">
+                       <small> Email format is not correct.</small>
+                    </div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                
+                <label for="">message</label>
+                <input type="message" id="message" formControlName="message" required
+                    class="form-control" placeholder="message" appAppPassowrd>
+                
+                <div *ngIf="message.invalid && (message.dirty || message.touched)" class="alert alert-danger">
+
+                    <div *ngIf="message.errors.required">
+                       <small> Message is required.</small>
+                    </div>
+                
+                </div>
+
+            </div>
+           
+            <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">   </ngx-spinner>   
+            <div style="text-align: center;" *ngIf="!flag">
+                <img src="assets/sentImageFinal.gif" alt="Sent Image" width="200px" >
+            </div>
+
+            <button type="submit"  class="btn btn-primary" [disabled]="!emailForm.valid">Send Mail</button>
+            <button type="reset" class="btn btn-danger " style="float: right;" [disabled]="emailForm.untouched">Reset </button>
+        </form>
+        
+    </div>
+  </div></div>

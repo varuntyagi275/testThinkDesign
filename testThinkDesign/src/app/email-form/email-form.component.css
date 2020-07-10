@@ -1,0 +1,19 @@
+.card-body{
+    padding: 30px 50px;
+  width: 100%;
+ 
+}
+.card-header{
+    
+    text-align: center;
+}
+
+error-border{
+    border-color:crimson;
+}
+
+
+input.ng-touched.ng-invalid{
+    border:1px solid red;
+    box-shadow: 0 0 13px inset rgba(225, 0,0 0.2);
+}

@@ -1,0 +1,2 @@
+1- Insatll Node Modules in the project by using *npm insall* command in the cmd.
+2- serve the project using *ng serve/ng serve -o/ npm start*

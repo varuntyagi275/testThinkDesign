@@ -1,0 +1,8 @@
+.background{
+    width: auto;
+    height: 100vh;
+    background-image: linear-gradient(to right, #0066bb, green);
+    
+    padding-top: 40px;
+    padding-left: 700px;
+}
